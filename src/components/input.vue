@@ -46,7 +46,7 @@
   <btn />
 </template>
 
-<script>
+<script lang="ts">
 import axios from 'axios'
 
 import btn from './button.vue'
