@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
   import InputCustom from '../components/input.vue'
   export default {
     components: {
