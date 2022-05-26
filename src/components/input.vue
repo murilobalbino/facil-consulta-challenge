@@ -46,12 +46,16 @@
   <btn />
 </template>
 
-<script lang="ts">
+<script>
 import axios from 'axios'
 
 import btn from './button.vue'
+import {ref} from "vue";
 
-let states = await axios.get("https://api-teste-front-end-fc.herokuapp.com/estados")
+let states = ref([])
+axios.get("https://api-teste-front-end-fc.herokuapp.com/estados").then((data) => {
+  states.value = data
+})
 export default {
   components: {
     btn
