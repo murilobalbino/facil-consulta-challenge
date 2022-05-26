@@ -1,16 +1,17 @@
 <script setup lang="ts">
-  import HelloWorld from './components/HelloWorld.vue'
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap/dist/js/bootstrap'
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+<!--  <div class="vw-100 vh-100 bg-yellow __container" >-->
+<!--    <div class="__content" >-->
+
+<!--    </div>-->
+<!--  </div>-->
+  <router-view></router-view>
 </template>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<style lang="scss">
+
 </style>
