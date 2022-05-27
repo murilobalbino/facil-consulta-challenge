@@ -11,5 +11,6 @@
 <style scoped>
   button {
     border-radius: 1.2rem;
+    margin-bottom: 3rem;
   }
 </style>

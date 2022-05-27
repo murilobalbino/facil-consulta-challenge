@@ -4,11 +4,6 @@
 </script>
 
 <template>
-<!--  <div class="vw-100 vh-100 bg-yellow __container" >-->
-<!--    <div class="__content" >-->
-
-<!--    </div>-->
-<!--  </div>-->
   <router-view></router-view>
 </template>
 
