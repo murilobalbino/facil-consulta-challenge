@@ -2,33 +2,49 @@
   <div class="vh-100 bg-yellow __container">
     <div class="__content">
       <div class="content">
-        <div><input-custom v-if="$route.query.step == 1" /></div>
-        <img src="src/assets/desktop-pagina-1.png" v-show="false" />
+        <div>
+          <input-custom v-if="$route.query.step == 1" />
+          <treatment v-if="$route.query.step == 2" />
+        </div>
+        <img :src="whichImage()" v-show="false" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="js">
+import Router from '../router'
+
 import InputCustom from '../views/input.vue'
+import Treatment from '../views/treatment.vue'
+
 export default {
   components: {
-    InputCustom
+    InputCustom,
+    Treatment
   },
   beforeRouteUpdate(to, from) {
     let step = to.query.step
 
   },
   async beforeMount() {
-   this.$router.push({
-     query: {
-       step: 1
-     }
-   })
+    this.$router.push({
+      query: {
+        step: 2
+      }
+    })
   },
   methods: {
-    testA: (r) => {
-      console.log(r)
+    whichImage: () => {
+      let step = Router.currentRoute._value.query.step
+      console.log(step)
+      if (step == 1) {
+        return 'src/assets/desktop-pagina-1.png'
+      } else if (step == 2) {
+        return 'src/assets/desktop-pagina-2.png'
+      } else if (step == 3) {
+        return 'src/assets/desktop-pagina-3.png'
+      }
     }
   }
 }
@@ -40,6 +56,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --bs-primary: #483698 !important;
   --bs-primary-rgb: 72, 54, 152 !important;
@@ -57,14 +74,17 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+
     .__content {
       width: 90% !important;
       border-radius: 3.5rem !important;
-      .content {  
+
+      .content {
         height: 90%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         img {
           display: block !important;
         }
@@ -79,7 +99,7 @@ export default {
     max-width: 67.5rem;
 
     border-radius: 3.5rem 3.5rem 0 0;
-    
+
     .content {
       width: 85%;
       margin: 0 auto;
@@ -98,6 +118,7 @@ export default {
         font-weight: bold;
         color: var(--bs-primary);
       }
+
       h2 {
         font-family: "Open Sans", sans-serif;
         font-weight: 600;
