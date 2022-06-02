@@ -5,12 +5,19 @@
 </template>
 
 <script lang="ts">
-  export default {}
+export default {}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   button {
     border-radius: 1.2rem;
     margin-bottom: 3rem;
+    display: grid;
+    place-items: center;
+    a {
+      text-align: center;
+      text-decoration: none;
+      color: var(--bs-white);
+    }
   }
 </style>

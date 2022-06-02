@@ -1,24 +1,25 @@
 <template>
-  <div class="vw-100 vh-100 bg-yellow __container" >
+  <div class="vh-100 bg-yellow __container" >
     <div class="__content" >
       <div class="content">
         <h1>Sobre o profissional</h1>
         <h2>Dados do profissional</h2>
 
-        <input-custom />
+        <input-custom v-if="$route.query.step == 1" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="js">
-  import InputCustom from '../components/input.vue'
+  import InputCustom from '../views/input.vue'
   export default {
     components: {
       InputCustom
     },
     beforeRouteUpdate(to, from) {
-      console.log(to.query.step)
+      let step = to.query.step
+      
     },
     async beforeMount() {
      this.$router.push({
@@ -26,6 +27,11 @@
          step: 1
        }
      })
+    },
+    methods: {
+      testA: (r) => {
+        console.log(r)
+      }
     }
   }
 </script>

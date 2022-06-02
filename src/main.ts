@@ -1,24 +1,14 @@
 import { createApp } from 'vue'
 
-import {createRouter, createWebHashHistory} from "vue-router";
+import Maska from 'maska'
 
 import App from './App.vue'
-import Home from './pages/Home.vue'
+
+import Router from './router'
 import Store from './store'
 
-const routes = [
-    {
-        path: "/",
-        component: Home
-    }
-]
-
-const router = createRouter({
-    history: createWebHashHistory(),
-    routes
-})
-
 createApp(App)
-    .use(router)
+    .use(Router)
     .use(Store)
+    .use(Maska)
     .mount('#app')
