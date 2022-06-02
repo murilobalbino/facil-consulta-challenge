@@ -1,4 +1,7 @@
 <template>
+  
+  <h1>Sobre o profissional</h1>
+  <h2>Dados do profissional</h2>
   <section>
     <input-component
       id="name-input"
